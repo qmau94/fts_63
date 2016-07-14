@@ -5,6 +5,7 @@ gem "bcrypt", "3.1.7"
 gem "carrierwave", "0.10.0"
 gem "will_paginate", "3.0.7"
 gem "config", "1.2.1"
+gem "devise"
 gem "bootstrap-will_paginate", "0.0.10"
 gem "bootstrap-sass", "3.2.0.0"
 gem "sass-rails", "5.0.2"
@@ -18,16 +19,14 @@ gem "sdoc", "0.4.0", group: :doc
 
 group :development, :test do
   gem "sqlite3", "1.3.9"
-  gem "byebug", "3.4.0"
   gem "web-console", "2.0.0.beta3"
-  gem "spring", "1.1.3"
   gem "faker", "1.4.2"
-end
-
-group :test do
-  gem "minitest-reporters", "1.0.5"
-  gem "mini_backtrace", "0.1.3"
-  gem "guard-minitest", "2.3.1"
+  gem "byebug"
+  gem "spring"
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+  gem "capybara"
+  gem "guard-rspec"
 end
 
 group :production do
