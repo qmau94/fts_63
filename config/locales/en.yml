@@ -4,6 +4,9 @@ en:
   home:
     h1: Welcome to Training Framgia App
     title: Home
+    log_in_with_fb: Log in with Facebook
+    sign_up: Sign up
+    min_chars: characters minimum
   log_in: Log in
   new: News
   rails: Rails tutorial
