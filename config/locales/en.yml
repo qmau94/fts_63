@@ -9,3 +9,6 @@ en:
   rails: Rails tutorial
   signup: Sign up now!
   title: Project2
+  admin: Admin page
+  flash:
+    is_not_admin: You don't have permission to do this action
