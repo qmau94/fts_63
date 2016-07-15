@@ -1,5 +1,9 @@
 <tr id="subject-<%= subject.id %>">
-  <td><%= subject.name %></td>
+  <td><%= link_to subject.name, [:admin, subject] %></td>
   <td><%= subject.question_number %></td>
   <td><%= subject.duration %></td>
+  <td><%= link_to t("edit.button"), edit_admin_subject_path(subject),
+    class: "btn btn-primary" %></td>
+  <td><%= link_to t("delete.button"), [:admin, subject], method: :delete,
+      class: "btn btn-primary", data: {confirm: t("delete.confirm")} %></td>
 </tr>
