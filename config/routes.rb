@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   root "static_pages#home"
   namespace :admin do
     root "static_pages#home"
-    resources :subjects, only: [:new, :create, :index]
+    resources :subjects
   end
 end
