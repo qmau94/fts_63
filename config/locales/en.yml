@@ -6,12 +6,24 @@ en:
     title: Home
     log_in_with_fb: Log in with Facebook
     sign_up: Sign up
-    min_chars: characters minimum
+    min_chars: "%{length} characters minimum"
+    edit: Edit profile
+    leave_blank: (leave blank if you don't want to change it)
+    pass_require: (we need your current password to confirm your changes)
+  signed_in: Signed as
   log_in: Log in
   new: News
   rails: Rails tutorial
   signup: Sign up now!
   title: Project2
   admin: Admin page
+  update: Update
+  cancel_acc: Cancel my account
+  confirm: Are you sure?
+  back: Back
+  unhappy: Unhappy?
   flash:
     is_not_admin: You don't have permission to do this action
+  error:
+    contain: This form has
+    error: error
