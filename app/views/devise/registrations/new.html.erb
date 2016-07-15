@@ -1,3 +1,4 @@
+<% provide :title, t("home.sign_up") %>
 <h2><%= t :sign_up %></h2>
 
 <%= form_for resource, as: resource_name,
@@ -16,9 +17,8 @@
 
   <div class="field">
     <%= f.label :password %>
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %>) <%= t "home.minchars"%></em>
-    <% end %><br>
+    <em><%= t("home.min_chars",
+      length: @minimum_password_length) if @minimum_password_length %></em><br>
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
