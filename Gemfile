@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem "rails", "4.2.6"
+gem "cancancan", "~> 1.10"
 gem "bcrypt", "3.1.7"
 gem "carrierwave", "0.10.0"
 gem "will_paginate", "3.0.7"
