@@ -1,6 +1,6 @@
 class Admin::StaticPagesController < ApplicationController
-  before_action :verify_admin
-  
+  authorize_resource class: false
+
   def home
   end
 end

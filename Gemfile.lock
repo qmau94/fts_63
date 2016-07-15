@@ -50,6 +50,7 @@ GEM
       columnize (~> 0.8)
       debugger-linecache (~> 1.2)
       slop (~> 3.6)
+    cancancan (1.15.0)
     capybara (2.7.1)
       addressable
       mime-types (>= 1.16)
@@ -294,6 +295,7 @@ DEPENDENCIES
   bootstrap-sass (= 3.2.0.0)
   bootstrap-will_paginate (= 0.0.10)
   byebug
+  cancancan (~> 1.10)
   capybara
   carrierwave (= 0.10.0)
   coffee-rails (= 4.1.0)
