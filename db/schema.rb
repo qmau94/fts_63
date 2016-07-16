@@ -121,6 +121,7 @@ ActiveRecord::Schema.define(version: 20160714141348) do
     t.boolean  "is_admin",               default: false
     t.string   "provider"
     t.string   "uid"
+    t.string   "slug"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.string   "email",                  default: "",    null: false
@@ -137,5 +138,6 @@ ActiveRecord::Schema.define(version: 20160714141348) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["slug"], name: "index_users_on_slug", unique: true
 
 end

@@ -1,4 +1,6 @@
 class Subject < ActiveRecord::Base
+  include Pretty_URL
+  
   has_many :exam, dependent: :destroy
   has_many :question, dependent: :destroy
   has_many :suggest_question, dependent: :destroy
@@ -18,9 +20,5 @@ class Subject < ActiveRecord::Base
       [:name, :question_number],
       [:name, :question_number, :duration]
     ]
-  end
-
-  def should_generate_new_friendly_id?
-    name_changed? || super
   end
 end
