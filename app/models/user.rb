@@ -1,9 +1,14 @@
 class User < ActiveRecord::Base
+  include Pretty_URL
+  extend FriendlyId
+  friendly_id :slug_candidates, use: :slugged
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable, :recoverable
   devise :database_authenticatable, :registerable,
     :rememberable, :validatable, :omniauthable
-    
+
+  after_save :should_generate_new_friendly_id?
+
   has_many :exam, dependent: :destroy
 
   class << self
@@ -23,5 +28,12 @@ class User < ActiveRecord::Base
         end
       end
     end
+  end
+
+  def slug_candidates
+    [
+      :username,
+      [:username, :email]
+    ]
   end
 end

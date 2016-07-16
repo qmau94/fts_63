@@ -23,4 +23,9 @@ class ApplicationController < ActionController::Base
       redirect_to root_url
     end
   end
+
+  rescue_from ActiveRecord::RecordNotFound do
+    flash[:notice] = t("flash.recordnotfound", column_name: params[:id])
+    redirect_to root_url
+  end
 end
