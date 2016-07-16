@@ -30,12 +30,12 @@ en:
     min_chars: characters minimum
     sign_up: Sign up
     title: Home
-    users_index: All users
+    users_index: Users
   signed_in: Signed as
   log_in: Log in
   new: News
   page:
-    subject: Subject
+    subject: Subjects
   rails: Rails tutorial
   signed_in: Signed as
   signup: Sign up now!

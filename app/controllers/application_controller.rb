@@ -1,11 +1,13 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
+  protect_from_forgery with: :exception
+  layout :layout_by_user
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, alert: exception.message
   end
-  protect_from_forgery with: :exception
-  before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
   def configure_permitted_parameters
@@ -27,5 +29,15 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound do
     flash[:notice] = t("flash.recordnotfound", column_name: params[:id])
     redirect_to root_url
+  end
+
+  def layout_by_user
+    if user_signed_in? && current_user.is_admin?
+      "admin"
+    elsif user_signed_in? && !current_user.is_admin?
+      "user"
+    else
+      "application"   
+    end
   end
 end

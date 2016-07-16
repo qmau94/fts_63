@@ -9,12 +9,11 @@
     <%= render "layouts/shim" %>
   </head>
   <body>
-    <%= render "layouts/header" %>
-    <div class="page-content">
-      <div class="container">
+    <div id="wrapper">
+      <%= render "layouts/admin_sidebar"%>
+      <div id="page-content-wrapper">
         <%= render "layouts/flash" %>
         <%= yield %>
-        <%= render "layouts/footer" %>
       </div>
     </div>
   </body>
