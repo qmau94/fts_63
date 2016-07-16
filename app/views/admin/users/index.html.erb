@@ -1,0 +1,24 @@
+<% provide :title, t("home.users_index") %>
+<h2><%= t "home.users_index" %></h2>
+<%= search_form_for @search, url:  search_admin_users_path,
+  method: :post do |f| %>
+  <%= f.condition_fields do |c| %>
+    <%= render "condition_fields", f: c %>
+  <% end %>
+  <p><%= link_to_add_fields "Add Conditions", f, :condition %></p>
+  <div class="field">
+    <%= t "users.sort" %>
+    <%= f.sort_fields do |s| %>
+      <%= s.sort_select %>
+    <% end %>
+  </div>
+  <%= f.submit t "users.search" %>
+<% end %>
+<table>
+  <tr>
+    <th><%= sort_link @search, :username, t("users.name") %></th>
+    <th><%= sort_link @search, :email, t("users.email") %></th>
+    <th><%= t "users.actions" %></th>
+  </tr>
+  <%= render @users %>
+</table>
