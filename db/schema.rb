@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20160714141348) do
   add_index "answers", ["question_id"], name: "index_answers_on_question_id"
 
   create_table "exams", force: :cascade do |t|
-    t.boolean  "status"
+    t.integer  "status"
     t.time     "spent_time"
     t.integer  "score"
     t.integer  "user_id"

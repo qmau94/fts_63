@@ -20,3 +20,6 @@ Subject.create! name: "Ruby", question_number: 5, duration: 10
     question_number: question_number,
     duration: duration
 end
+Exam.create! status: 0, user_id: 2, subject_id: 1
+Exam.create! status: 1, user_id: 2, subject_id: 2
+Exam.create! status: 2, user_id: 2, subject_id: 3

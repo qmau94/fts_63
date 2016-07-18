@@ -6,15 +6,26 @@ en:
   confirm: Are you sure?
   contact: Contact
   create:
+    at: Create at
     button: Create
-  error:
-    contain: This form has
-    error: error
+    exam: Create Exam
   delete:
     button: delete
     confirm: You sure?
+  view:
+    button: View
   edit:
-    button: edit
+    button: Edit
+  error:
+    contain: This form has
+    error: error
+  exam:
+    create:
+      error: Create Exam Error
+      success: Create Exam Success
+    status: Status
+    spent_time: Spent Time
+    score: Score
   flash:
     is_not_admin: You don't have permission to do this action
     subject_nil: Subject nil!!
@@ -28,6 +39,7 @@ en:
     pass_require: (we need your current password to confirm your changes)
     log_in_with_fb: Log in with Facebook
     min_chars: characters minimum
+    pass_require: (we need your current password to confirm your changes)
     sign_up: Sign up
     title: Home
     users_index: All users
@@ -35,10 +47,13 @@ en:
   log_in: Log in
   new: News
   page:
+    exam: Exam
     subject: Subject
   rails: Rails tutorial
   signed_in: Signed as
   signup: Sign up now!
+  start:
+    button: Start
   update: Update
   cancel_acc: Cancel account
   unhappy: Unhappy?
@@ -50,12 +65,12 @@ en:
       success: Create Subject Success
     delete:
       success: Delete Subject Success
-    update:
-      success: Update Subject Success
-      error: Update Subject Error
     duration: Duration
     name: Name
-    question_number: Number_Question
+    question_number: Number Question
+    update:
+      error: Update Subject Error
+      success: Update Subject Success
   title: Project2
   error:
     contain: This form has

@@ -1,0 +1,14 @@
+<tr id="exam-<%= exam.id %>">
+  <td><%= exam.created_at %></td>
+  <td><%= exam.subject.name %></td>
+  <td><%= exam.status %></td>
+  <td><%= exam.subject.duration %></td>
+  <td><%= exam.subject.question_number %></td>
+  <td><%= exam.spent_time %></td>
+  <td><%= exam.score %></td>
+  <% if exam.checked? %>
+    <td><%= link_to t("view.button"), "#" %></td>
+  <% elsif exam.init? %>
+    <td><%= link_to t("start.button"), "#" %></td>
+  <% end %>
+</tr>
