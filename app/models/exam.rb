@@ -2,5 +2,8 @@ class Exam < ActiveRecord::Base
   belongs_to :user
   belongs_to :subject
 
-  has_many :result, dependent: :destroy
+  has_many :results, dependent: :destroy
+
+  enum status: ["init", "uncheck", "checked"]
+
 end

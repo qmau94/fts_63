@@ -11,4 +11,6 @@ Rails.application.routes.draw do
       collection {post :search, to: "users#index"}
     end
   end
+  resources :exams, only: [:index, :create, :new]
+  resources :subjects, only: :index
 end

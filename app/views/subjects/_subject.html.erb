@@ -1,0 +1,9 @@
+<span>
+  <%= subject.name %>
+  <%= form_for exam do |e| %>
+    <%= e.hidden_field :status, value: "init" %>
+    <%= e.hidden_field :user_id, value: current_user.id %>
+    <%= e.hidden_field :subject_id, value: subject.id %>
+    <%= e.submit t("create.exam"), class: "btn btn-primary" %>
+  <% end %>
+</span>
