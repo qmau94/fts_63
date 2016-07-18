@@ -2,6 +2,10 @@ class Admin::SubjectsController < ApplicationController
   before_filter :find_subject, except: [:new, :index, :create]
   load_and_authorize_resource find_by: :slug
 
+  def index
+    @subjects = @subjects.page(params[:page]).per Settings.per_page
+  end
+  
   def destroy
     if @subject.destroy
       flash[:success] = t "subject.delete.success"
@@ -28,7 +32,6 @@ class Admin::SubjectsController < ApplicationController
   end
 
   private
-
   def find_subject
     @subject = Subject.friendly.find_by slug: params[:id]
     if @subject.nil?
