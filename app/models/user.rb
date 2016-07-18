@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
   after_save :should_generate_new_friendly_id?
 
-  has_many :exam, dependent: :destroy
+  has_many :exams, dependent: :destroy
 
   class << self
     def from_omniauth auth
