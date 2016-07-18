@@ -1,7 +1,7 @@
 class Question < ActiveRecord::Base
   belongs_to :subject
 
-  has_many :result, dependent: :destroy
-  has_many :answer, dependent: :destroy
-  has_many :other_answer, dependent: :destroy
+  has_many :results, dependent: :destroy
+  has_many :answers, dependent: :destroy
+  has_many :other_answers, dependent: :destroy
 end
