@@ -1,6 +1,7 @@
 en:
   about: About
   admin: Admin page
+  answers: Answers
   back: Back
   cancel_acc: Cancel my account
   confirm: Are you sure?
@@ -49,6 +50,17 @@ en:
   page:
     exam: Exam
     subject: Subject
+  question:
+    add_answer: Add other answer
+    add_question: Add question
+    content: Content
+    create_fail: Question create failed!!!
+    create_succ: Question create successfull!!
+    new: New question
+    question_type: Question type
+    remove: Remove
+    subject: Subject
+    title: Question
   rails: Rails tutorial
   signed_in: Signed as
   signup: Sign up now!
