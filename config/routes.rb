@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :users do
       collection {post :search, to: "users#index"}
     end
+    resources :questions, only: [:index, :create, :new]
   end
   resources :exams, only: [:index, :create, :new]
   resources :subjects, only: :index
