@@ -43,8 +43,6 @@ GEM
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.2.0.0)
       sass (~> 3.2)
-    bootstrap-will_paginate (0.0.10)
-      will_paginate
     builder (3.2.2)
     byebug (3.4.0)
       columnize (~> 0.8)
@@ -132,6 +130,9 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.3)
     jwt (1.5.4)
+    kaminari (0.17.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -293,7 +294,6 @@ GEM
       binding_of_caller (= 0.7.3.pre1)
       railties (~> 4.0)
       sprockets-rails (>= 2.0, < 4.0)
-    will_paginate (3.0.7)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -303,7 +303,6 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (= 3.1.7)
   bootstrap-sass (= 3.2.0.0)
-  bootstrap-will_paginate (= 0.0.10)
   byebug
   cancancan (~> 1.10)
   capybara
@@ -317,6 +316,7 @@ DEPENDENCIES
   guard-rspec
   jbuilder (= 2.2.3)
   jquery-rails (= 4.0.3)
+  kaminari
   omniauth-facebook
   paperclip (= 5.0.0.beta1)
   pg (= 0.17.1)
@@ -331,7 +331,6 @@ DEPENDENCIES
   turbolinks (= 2.3.0)
   uglifier (= 2.5.3)
   web-console (= 2.0.0.beta3)
-  will_paginate (= 3.0.7)
 
 BUNDLED WITH
    1.12.5

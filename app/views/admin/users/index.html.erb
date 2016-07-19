@@ -1,17 +1,10 @@
 <% provide :title, t("home.users_index") %>
 <h2><%= t "home.users_index" %></h2>
-<%= search_form_for @search, url:  search_admin_users_path,
-  method: :post do |f| %>
+<%= search_form_for @search, url: admin_users_path do |f| %>
   <%= f.condition_fields do |c| %>
     <%= render "condition_fields", f: c %>
   <% end %>
   <p><%= link_to_add_fields "Add Conditions", f, :condition %></p>
-  <div class="field">
-    <%= t "users.sort" %>
-    <%= f.sort_fields do |s| %>
-      <%= s.sort_select %>
-    <% end %>
-  </div>
   <%= f.submit t "users.search" %>
 <% end %>
 <table>
@@ -22,3 +15,4 @@
   </tr>
   <%= render @users %>
 </table>
+<%= paginate @users %>

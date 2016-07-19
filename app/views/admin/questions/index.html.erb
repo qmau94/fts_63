@@ -2,4 +2,5 @@
   <%= link_to t("question.new"), new_admin_question_path,
     class: "btn btn-primary" %>
   <%= render @questions %>
+  <%= paginate @questions %>
 </div>

@@ -3,9 +3,8 @@ class Admin::UsersController < ApplicationController
 
   def index
     @search = User.search params[:q]
-    @users = @search.result distint: true
-    @search.build_condition if @search.conditions.empty?
-    @search.build_sort if @search.sorts.empty?
+    @users = @search.result.page(params[:page]).per Settings.per_page
+    @search.build_condition
   end
 
   def show

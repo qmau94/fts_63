@@ -3,6 +3,9 @@ class Admin::QuestionsController < ApplicationController
 
   before_action :load_params, only: [:new]
 
+  def index
+  end
+  
   def new
     @question.answers.build
   end
@@ -15,9 +18,6 @@ class Admin::QuestionsController < ApplicationController
       load_params
       render :new
     end
-  end
-
-  def index
   end
 
   private

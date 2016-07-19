@@ -1,4 +1,4 @@
-<div>
+<div class="td-question">
   <%= render "shared/error_message", object: @question %>
   <%= form_for [:admin, @question] do |f| %>
     <%= f.label :subject_id, t("question.subject") %>
