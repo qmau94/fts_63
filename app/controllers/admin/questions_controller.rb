@@ -1,9 +1,13 @@
 class Admin::QuestionsController < ApplicationController
   load_and_authorize_resource
-
+  skip_load_resource only: :index
+  
   before_action :load_params, only: [:new]
 
   def index
+    @search = Question.search params[:q]
+    @questions = @search.result.page(params[:page]).per Settings.per_page
+    @search.build_condition
   end
   
   def new

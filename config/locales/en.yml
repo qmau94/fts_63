@@ -43,13 +43,14 @@ en:
     pass_require: (we need your current password to confirm your changes)
     sign_up: Sign up
     title: Home
-    users_index: All users
+    users_index: Users
   signed_in: Signed as
   log_in: Log in
   new: News
   page:
     exam: Exam
-    subject: Subject
+    subject: Subjects
+    question: Questions
   question:
     add_answer: Add other answer
     add_question: Add question
@@ -61,6 +62,8 @@ en:
     remove: Remove
     subject: Subject
     title: Question
+    subject: Subjects
+    search: Search
   rails: Rails tutorial
   signed_in: Signed as
   signup: Sign up now!

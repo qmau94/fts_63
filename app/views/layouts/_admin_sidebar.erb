@@ -1,0 +1,19 @@
+<div id="sidebar-wrapper">
+  <ul class="sidebar-nav">
+    <li class="sidebar-brand">
+      <%= link_to t("title"), admin_root_url %>
+    </li>
+    <li>
+      <%= link_to t("users.users"), admin_users_path %>
+    </li>
+    <li>
+      <%= link_to t("page.subjects"), admin_subjects_path %>
+    </li>
+    <li>
+      <%= link_to t("page.questions"), admin_questions_path %>
+    </li>
+    <li>
+      <%= link_to t(:log_out), destroy_user_session_path, method: :delete %>
+    </li>
+  </ul>
+</div>

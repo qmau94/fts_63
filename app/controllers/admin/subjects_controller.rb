@@ -31,6 +31,10 @@ class Admin::SubjectsController < ApplicationController
     end
   end
 
+  def index
+    @subjects = @subjects.page(params[:page]).per Settings.per_page
+  end
+
   private
   def find_subject
     @subject = Subject.friendly.find_by slug: params[:id]
