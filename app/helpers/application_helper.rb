@@ -21,7 +21,7 @@ module ApplicationHelper
     fields = f.fields_for association, new_object, child_index: id do |answer_form|
       render association.to_s.singularize + "_fields", f: answer_form
     end
-    link_to name, "#", class: "add_fields", data: {id: id, fields: fields.gsub("\n", "")}
+    link_to name, "#", class: "add_field", data: {id: id, fields: fields.gsub("\n", "")}
   end
 
   def add_fields_answer f, association
@@ -29,6 +29,22 @@ module ApplicationHelper
     @tmpl = @tmpl.gsub /(?<!\n)\n(?!\n)/, " "
     return "<script> var #{association.to_s}_field = '#{@tmpl.to_s}' </script>"
       .html_safe
+  end
+
+  def link_to_function name, *args, &block
+    html_options = args.extract_options!.symbolize_keys
+
+    function = block_given? ? update_page(&block) : args[0] || ""
+    onclick = "#{"#{html_options[:onclick]};
+      "if html_options[:onclick]}#{function}; return false;"
+    href = html_options[:href] || "#"
+
+    content_tag(:a, name, html_options.merge(href: href,
+      onclick: onclick))
+  end
+
+  def link_to_remove_fields name, f
+    f.hidden_field(:_destroy) + link_to_function(name, "remove_fields(this)")
   end
 
   private

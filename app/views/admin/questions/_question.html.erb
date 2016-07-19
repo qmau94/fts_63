@@ -1,4 +1,13 @@
-<tr>
-  <td><%= question.question %></td>
-  <td><%= question.subject.name %></td>
-</tr>
+<div class="row">
+  <span><%= question.question %></span>
+  <span><%= question.subject.name %></span>
+  <span>
+    <%= link_to t("edit.question"), edit_admin_question_path(question),
+      class: "btn btn-primary" %>
+    </span>
+  <span>
+    <%= link_to t("destroy.button"), admin_question_path(question),
+      method: :delete, class: "btn btn-danger",
+      data: {confirm: t("destroy.confirm")} %>
+  </span>
+</div>

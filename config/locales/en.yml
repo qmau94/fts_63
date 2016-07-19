@@ -17,6 +17,7 @@ en:
     button: View
   edit:
     button: Edit
+    question: Edit question
   error:
     contain: This form has
     error: error
@@ -53,7 +54,6 @@ en:
     question: Questions
   question:
     add_answer: Add other answer
-    add_question: Add question
     content: Content
     create_fail: Question create failed!!!
     create_succ: Question create successfull!!
@@ -62,8 +62,11 @@ en:
     remove: Remove
     subject: Subject
     title: Question
-    subject: Subjects
     search: Search
+    update_success: Update successfull
+    create: Add question
+    edit: Update question
+    delete_success: Delete successfull
   rails: Rails tutorial
   signed_in: Signed as
   signup: Sign up now!
@@ -104,3 +107,6 @@ en:
     cant_delete: User can't be deleted
     users: Users
     remove: Remove
+  destroy:
+    button: Delele
+    confirm: Are you sure?
