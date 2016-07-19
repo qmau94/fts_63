@@ -70,13 +70,13 @@ $(document).on('change load', '.question-type', function() {
   prev = $(this).val();
 });
 
+function remove_fields(link) {
+  $(link).prev('input[type=hidden]').val('1');
+  $(link).closest('.field').hide();
+}
+
 var remove = function(){
-  $('.td-question form').on('click', '.td-question .remove_fields', function(){
-    $(this).prev('input[type=hidden]').val('1');
-    $(this).closest('fieldset').hide();
-    event.preventDefault();
-  });
-  $('.td-question form').on('click', '.td-question .add_fields', function(){
+  $('.td-question form').on('click', '.add_field', function(){
     time = new Date().getTime();
     regexp = new RegExp($(this).data('id'), 'g');
     $(this).before($(this).data('fields').replace(regexp, time));
@@ -84,7 +84,20 @@ var remove = function(){
   });
 };
 
-$(document).ready(remove);
-$(document).on("page:load", remove);
 $(document).on("page:change", remove);
 
+var add = function() {
+  $('form').on('click', '.remove_fields', function(event) {
+    $(this).closest('.field').remove();
+    return event.preventDefault();
+  });
+  $('form').on('click', '.add_fields', function(event) {
+    var regexp, time;
+    time = new Date().getTime();
+    regexp = new RegExp($(this).data('id'), 'g');
+    $(this).before($(this).data('fields').replace(regexp, time));
+    return event.preventDefault();
+  });
+};
+
+$(document).on("page:change", add);

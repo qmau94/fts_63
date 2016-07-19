@@ -6,7 +6,6 @@
     <%= f.check_box :is_correct, class: "check" %>
   </div>
   <div class="remove-choose">
-    <%= f.hidden_field :_destroy %>
-    <%= link_to t("question.remove"), "#", class: "remove_fields" %>
+    <%= link_to_remove_fields t("question.remove"), f %>
   </div>
 </fieldset>

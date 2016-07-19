@@ -2,7 +2,7 @@ class Admin::QuestionsController < ApplicationController
   load_and_authorize_resource
   skip_load_resource only: :index
   
-  before_action :load_params, only: [:new]
+  before_action :load_params, only: [:new, :edit]
 
   def index
     @search = Question.search params[:q]
@@ -21,6 +21,25 @@ class Admin::QuestionsController < ApplicationController
     else
       load_params
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @question.update_attributes question_params
+      flash[:success] = t "question.update_success"
+      redirect_to admin_questions_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if @question.destroy
+      flash[:success] = t "question.delete_success"
+      redirect_to admin_questions_path
     end
   end
 
