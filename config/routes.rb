@@ -7,9 +7,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root "static_pages#home"
     resources :subjects
-    resources :users do
-      collection {post :search, to: "users#index"}
-    end
+    resources :users
     resources :questions, only: [:index, :create, :new]
   end
   resources :exams, only: [:index, :create, :new]
