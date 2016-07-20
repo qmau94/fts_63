@@ -2,13 +2,10 @@
   <td><%= exam.created_at %></td>
   <td><%= exam.subject.name %></td>
   <td><%= exam.status %></td>
-  <td><%= exam.subject.duration %></td>
+  <td><%= time_form exam.subject.duration %></td>
   <td><%= exam.subject.question_number %></td>
-  <td><%= exam.spent_time %></td>
+  <td><%= time_form exam.spent_time %></td>
   <td><%= exam.score %></td>
-  <% if exam.checked? %>
-    <td><%= link_to t("view.button"), "#" %></td>
-  <% elsif exam.init? %>
-    <td><%= link_to t("start.button"), "#" %></td>
-  <% end %>
+  <td><%= link_to t("exam.#{exam.status}"), exam_path(exam),
+      class: "btn btn-primary" unless exam.uncheck? %></td>
 </tr>

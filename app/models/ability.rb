@@ -8,7 +8,7 @@ class Ability
         can :read, :all
         can :manage, Subject
         can :manage, Question
-        can [:edit, :destroy], User do |other_user|
+        can [:edit, :update, :destroy], User do |other_user|
           user != other_user
         end
       else
@@ -19,7 +19,7 @@ class Ability
         cannot :manage, :all
       else
         can :read, Subject
-        can [:read, :create], Exam
+        can [:read, :create, :update], Exam
       end
     end
   end

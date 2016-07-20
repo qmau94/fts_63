@@ -10,6 +10,6 @@ Rails.application.routes.draw do
     resources :users
     resources :questions, except: [:show]
   end
-  resources :exams, only: [:index, :create, :new]
+  resources :exams, except: :destroy
   resources :subjects, only: :index
 end

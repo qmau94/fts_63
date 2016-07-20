@@ -47,6 +47,10 @@ module ApplicationHelper
     f.hidden_field(:_destroy) + link_to_function(name, "remove_fields(this)")
   end
 
+  def time_form time
+    Time.at(time).utc.strftime Settings.time_format
+  end
+
   private
   def render_fields f, association
     new_object = f.object.class.reflect_on_association(association).klass.new

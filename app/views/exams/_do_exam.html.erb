@@ -1,0 +1,18 @@
+<% provide :title, t("page.do_exam", name: @exam.subject.name) %>
+<div>
+  <%= hidden_field_tag :remaining_time, @remaining_time %>
+  <div class="col-md-2 col-md-offset-1 timer">
+    <h4><%= t "exam.remaining_time" %></h4>
+    <div id="clock"></div>
+  </div>
+  <%= form_for @exam do |e| %>
+    <ol>
+      <%= e.fields_for :results do |r| %>
+        <%= render "results/result_field", r: r %>
+      <% end %>
+    </ol>
+    <%= e.submit t("finish.save"), class: "btn btn-primary submit-time-out" %>
+    <%= e.submit t("finish.button"), class: "btn btn-danger", name: "finish",
+      data: {confirm: t("finish.warning")} %>
+  <% end %>
+</div>
