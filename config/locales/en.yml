@@ -13,8 +13,9 @@ en:
   delete:
     button: delete
     confirm: You sure?
-  view:
-    button: View
+  destroy:
+    button: Delele
+    confirm: Are you sure?
   edit:
     button: Edit
     question: Edit question
@@ -25,57 +26,62 @@ en:
     create:
       error: Create Exam Error
       success: Create Exam Success
-    status: Status
-    spent_time: Spent Time
     score: Score
+    spent_time: Spent Time
+    status: Status
+    result: "Score of this exam: %{score}"
+    finished: Exam has finished
+    init: Start
+    testing: Continue
+    checked: View
+  finish:
+    button: Finish
+    error: Finish Exam Error
+    save: Save
+    success: Finish Exam
+    warning: Are you sure finish exam!!
   flash:
+    cant_access: You can't access on this page
     is_not_admin: You don't have permission to do this action
+    recordnotfound: Sorry, no record of %{column_name} was found
     subject_nil: Subject nil!!
-    recordnotfound: "Sorry, no record of %{column_name} was found"
   home:
     edit: Edit profile
     h1: Welcome to Training Framgia App
     leave_blank: (leave blank if you don't want to change it)
     log_in_with_fb: Log in with Facebook
-    min_chars: "%{length} characters minimum"
-    pass_require: (we need your current password to confirm your changes)
-    log_in_with_fb: Log in with Facebook
     min_chars: characters minimum
     pass_require: (we need your current password to confirm your changes)
     sign_up: Sign up
     title: Home
-    users_index: Users
-  signed_in: Signed as
+    users_index: All users
   log_in: Log in
   new: News
   page:
+    do_exam: "%{name} exam"
     exam: Exam
-    subject: Subjects
     question: Questions
+    subject: Subjects
   question:
     add_answer: Add other answer
     content: Content
+    create: Add question
     create_fail: Question create failed!!!
     create_succ: Question create successfull!!
+    delete_success: Delete successfull
+    edit: Update question
     new: New question
     question_type: Question type
     remove: Remove
+    search: Search
     subject: Subject
     title: Question
-    search: Search
     update_success: Update successfull
-    create: Add question
-    edit: Update question
-    delete_success: Delete successfull
   rails: Rails tutorial
   signed_in: Signed as
   signup: Sign up now!
   start:
     button: Start
-  update: Update
-  cancel_acc: Cancel account
-  unhappy: Unhappy?
-  confirm: Are you sure?
   subject:
     button: Create Subject
     create:
@@ -89,24 +95,21 @@ en:
     update:
       error: Update Subject Error
       success: Update Subject Success
+  submit: Submit
   title: Project2
-  error:
-    contain: This form has
-    error: error
+  unhappy: Unhappy?
+  update: Update
   users:
-    updated: User updated!
-    edit: Edit user
-    deleted: User deleted!
-    delete: Delete
-    name_cont: Name contains
-    search: Search
-    name: Name
-    email: Email
     actions: Actions
-    sort: Sort
     cant_delete: User can't be deleted
-    users: Users
+    delete: Delete
+    deleted: User deleted!
+    edit: Edit user
+    email: Email
+    name: Name
+    name_cont: Name contains
     remove: Remove
-  destroy:
-    button: Delele
-    confirm: Are you sure?
+    search: Search
+    sort: Sort
+    updated: User updated!
+    users: Users

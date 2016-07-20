@@ -10,4 +10,6 @@ class Question < ActiveRecord::Base
   enum question_type: [:single_choice, :multiple_choice, :text]
 
   validates :question, presence: true
+
+  scope :random, ->{order "RANDOM()"}
 end

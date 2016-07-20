@@ -1,0 +1,11 @@
+<li id="question_<%= r.object.question.id %>">
+  <%= r.object.question.question %>
+  <% r.object.question.answers.each do |a| %>
+    <div>
+      <%= r.check_box :multiple_answers,
+        {checked: r.object.multiple_answers.include?(a.id.to_s),
+        multiple: true}, a.id, false %>
+      <%= a.answer %><br/>
+    </div>
+  <% end %>
+</li>
