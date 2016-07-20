@@ -113,3 +113,5 @@ en:
     sort: Sort
     updated: User updated!
     users: Users
+  js:
+    alert: Your exam has timed out. Your test will be submitted automatically

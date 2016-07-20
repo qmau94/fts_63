@@ -14,6 +14,9 @@
 //= require bootstrap
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.countdown
+//= require countdown
+//= require i18n/translations
 //= require_tree .
 
 function addForm() {
