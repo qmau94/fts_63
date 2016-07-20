@@ -1,6 +1,8 @@
 source "https://rubygems.org"
 
 gem "rails", "4.2.6"
+gem "i18n-js", ">= 3.0.0.rc11"
+gem "jquery-countdown-rails"
 gem "friendly_id", "~> 5.1.0"
 gem "cancancan", "~> 1.10"
 gem "ransack"
