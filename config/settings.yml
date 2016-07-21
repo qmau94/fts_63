@@ -6,3 +6,4 @@ time_format: "%H:%M:%S"
 boolean:
   false: false
   true: true
+mail: "dat.hedspi@gmail.com"

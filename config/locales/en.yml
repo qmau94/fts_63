@@ -4,7 +4,7 @@ en:
   answers: Answers
   back: Back
   cancel_acc: Cancel my account
-  check : Check
+  check: Check
   confirm: Are you sure?
   contact: Contact
   create:
@@ -24,21 +24,21 @@ en:
     contain: This form has
     error: error
   exam:
+    checked: View
     create:
       error: Create Exam Error
       success: Create Exam Success
+    finished: Exam has finished
+    init: Start
+    result: "Score of this exam: %{score}"
     score: Score
     score_form: "%{score}/%{total}"
     spent_time: Spent Time
     status: Status
-    result: "Score of this exam: %{score}"
-    finished: Exam has finished
-    init: Start
     testing: Continue
-    checked: View
     update:
-      success: Update exam success
       error: Update exam error
+      success: Update exam success
   finish:
     button: Finish
     error: Finish Exam Error
@@ -50,6 +50,7 @@ en:
     is_not_admin: You don't have permission to do this action
     recordnotfound: Sorry, no record of %{column_name} was found
     subject_nil: Subject nil!!
+  hello: Hello
   home:
     edit: Edit profile
     h1: Welcome to Training Framgia App
@@ -60,7 +61,13 @@ en:
     sign_up: Sign up
     title: Home
     users_index: All users
+  in: created at
+  js:
+    alert: Your exam has timed out. Your test will be submitted automatically
   log_in: Log in
+  mail:
+    finish: You have finished Framgia training test
+    start: You have started Framgia training test
   new: News
   page:
     do_exam: "%{name} exam"
@@ -118,5 +125,3 @@ en:
     sort: Sort
     updated: User updated!
     users: Users
-  js:
-    alert: Your exam has timed out. Your test will be submitted automatically
