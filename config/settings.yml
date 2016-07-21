@@ -3,3 +3,6 @@ max: 50
 default_password: 1
 per_page: 5
 time_format: "%H:%M:%S"
+boolean:
+  false: false
+  true: true

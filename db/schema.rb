@@ -70,17 +70,15 @@ ActiveRecord::Schema.define(version: 20160714141348) do
   add_index "questions", ["subject_id"], name: "index_questions_on_subject_id"
 
   create_table "results", force: :cascade do |t|
-    t.boolean  "state"
+    t.boolean  "state",            default: false
     t.string   "multiple_answers", default: "--- []\n"
     t.integer  "exam_id"
     t.integer  "question_id"
-    t.integer  "answer_id"
     t.integer  "other_answer_id"
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
   end
 
-  add_index "results", ["answer_id"], name: "index_results_on_answer_id"
   add_index "results", ["exam_id"], name: "index_results_on_exam_id"
   add_index "results", ["other_answer_id"], name: "index_results_on_other_answer_id"
   add_index "results", ["question_id"], name: "index_results_on_question_id"

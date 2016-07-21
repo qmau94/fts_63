@@ -33,13 +33,23 @@ subjects.each do |subject|
 end
 
 questions = Question.all
-questions.each do |question|
+questions.single_choice.each do |question|
   question.answers.build(answer: Faker::Lorem.characters(5),
-      is_correct: true).save
+    is_correct: true).save
+  question.answers.build(answer: Faker::Lorem.characters(5),
+    is_correct: false).save
   question.answers.build(answer: Faker::Lorem.characters(5),
     is_correct: false).save
   question.answers.build(answer: Faker::Lorem.characters(5),
     is_correct: false).save
+end
+questions.multiple_choice.each do |question|
+  question.answers.build(answer: Faker::Lorem.characters(5),
+    is_correct: true).save
+  question.answers.build(answer: Faker::Lorem.characters(5),
+    is_correct: false).save
+  question.answers.build(answer: Faker::Lorem.characters(5),
+    is_correct: true).save
   question.answers.build(answer: Faker::Lorem.characters(5),
     is_correct: false).save
 end
