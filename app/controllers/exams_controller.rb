@@ -19,6 +19,8 @@ class ExamsController < ApplicationController
     @exam.spent_time = @exam.calculated_spent_time
     if @exam.update_attributes exam_params
       if @exam.time_out? || params[:finish]
+        UserWorker.perform_async UserWorker::FINISH_EXAM,
+          current_user.id, @exam.id
         flash[:success] = t "finish.success"
         @exam.uncheck!
       end
@@ -55,6 +57,8 @@ class ExamsController < ApplicationController
       case @exam.status
       when "init"
         @exam.create_result_for_exam
+        UserWorker.perform_async UserWorker::START_EXAM,
+          current_user.id, @exam.id
       when "checked"
         flash[:success] = t "exam.result", score: @exam.score
       when "testing"
