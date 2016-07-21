@@ -45,4 +45,10 @@ class Exam < ActiveRecord::Base
     time = Time.zone.now - started_at
     time > subject.duration ? subject.duration : time
   end
+
+  def update_results
+    results.each do |r|
+      r.check_state
+    end
+  end
 end

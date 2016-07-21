@@ -4,6 +4,7 @@ en:
   answers: Answers
   back: Back
   cancel_acc: Cancel my account
+  check : Check
   confirm: Are you sure?
   contact: Contact
   create:
@@ -27,6 +28,7 @@ en:
       error: Create Exam Error
       success: Create Exam Success
     score: Score
+    score_form: "%{score}/%{total}"
     spent_time: Spent Time
     status: Status
     result: "Score of this exam: %{score}"
@@ -34,6 +36,9 @@ en:
     init: Start
     testing: Continue
     checked: View
+    update:
+      success: Update exam success
+      error: Update exam error
   finish:
     button: Finish
     error: Finish Exam Error

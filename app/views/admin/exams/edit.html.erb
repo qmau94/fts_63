@@ -1,0 +1,28 @@
+<% provide :title, t("page.do_exam", name: @exam.subject.name) %>
+<div>
+  <%= form_for [:admin, @exam] do |e| %>
+    <ol>
+      <%= e.fields_for :results do |r| %>
+        <li id="question_<%= r.object.question.id %>">
+          <%= r.object.question.question %>
+          <% r.object.question.answers.each do |a| %>
+            <div>
+              <%= r.check_box :multiple_answers,
+                {checked: r.object.multiple_answers.include?(a.id.to_s),
+                multiple: true, disabled: true}, a.id, false %>
+              <%= background a, r.object %><br/>
+            </div>
+          <% end %>
+          <div>
+            <%= r.select :state, Settings.boolean.map {|k, v| [k, k]},
+              selected: r.object.state ? true : false, class: "form-control" %>
+          </div>
+        </li>
+      <% end %>
+    </ol>
+    <%= link_to t("back"), admin_exams_path, class: "btn" %>
+    <%= e.hidden_field :status, value: "checked" %>
+    <%= e.submit t("finish.button"), class: "btn btn-primary",
+      data: {confirm: t("confirm")} %>
+  <% end %>
+</div>

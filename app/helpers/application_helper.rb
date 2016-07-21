@@ -51,6 +51,11 @@ module ApplicationHelper
     Time.at(time).utc.strftime Settings.time_format
   end
 
+  def background answer, result
+    content_tag :div, answer.answer, class: answer.is_correct? ?
+      "list-group-item-success th-display" : "th-display"
+  end
+
   private
   def render_fields f, association
     new_object = f.object.class.reflect_on_association(association).klass.new

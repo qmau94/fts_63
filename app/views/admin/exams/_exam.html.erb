@@ -1,12 +1,14 @@
 <tr id="exam-<%= exam.id %>">
   <td><%= exam.created_at %></td>
   <td><%= exam.subject.name %></td>
-  <td><%= exam.status %></td>
   <td><%= time_form exam.subject.duration %></td>
   <td><%= exam.subject.question_number %></td>
   <td><%= time_form exam.spent_time %></td>
   <td><%= t "exam.score_form", score: exam.score,
     total: exam.subject.question_number %></td>
-  <td><%= link_to t("exam.#{exam.status}"), exam_path(exam),
-      class: "btn btn-primary" unless exam.uncheck? %></td>
+  <td><%= exam.status %></td>
+  <td>
+    <%= link_to t("check"), edit_admin_exam_path(exam),
+      class: "btn btn-primary" unless exam.init? %>
+  </td>
 </tr>
