@@ -59,8 +59,6 @@ class ExamsController < ApplicationController
         @exam.create_result_for_exam
         UserWorker.perform_async UserWorker::START_EXAM,
           current_user.id, @exam.id
-      when "checked"
-        flash[:success] = t "exam.result", score: @exam.score
       when "testing"
         flash.now[:danger] = t "exam.finished" if @exam.time_out?
       when "uncheck"

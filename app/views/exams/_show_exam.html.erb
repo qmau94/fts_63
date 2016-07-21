@@ -3,6 +3,7 @@
   <%= t "exam.score "%>:
   <%= t "exam.score_form", score: @exam.score,
     total: @exam.subject.question_number %>
+  <%= social_share_button_tag @exam.subject.name %>
 </h3>
 <div>
   <%= form_for @exam do |e| %>

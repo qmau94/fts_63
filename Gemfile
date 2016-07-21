@@ -1,6 +1,8 @@
 source "https://rubygems.org"
 
 gem "rails", "4.2.6"
+gem "social-share-button"
+gem "faker", "1.4.2"
 gem "i18n-js", ">= 3.0.0.rc11"
 gem "jquery-countdown-rails"
 gem "friendly_id", "~> 5.1.0"
@@ -27,7 +29,6 @@ gem "sdoc", "0.4.0", group: :doc
 group :development, :test do
   gem "sqlite3", "1.3.9"
   gem "web-console", "2.0.0.beta3"
-  gem "faker", "1.4.2"
   gem "byebug"
   gem "spring"
   gem "rspec-rails"
