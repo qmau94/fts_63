@@ -26,12 +26,12 @@ ActiveRecord::Schema.define(version: 20160714141348) do
   create_table "exams", force: :cascade do |t|
     t.integer  "status",     default: 0
     t.datetime "started_at"
-    t.time     "spent_time", default: '2000-01-01 00:00:00'
+    t.integer  "spent_time", default: 0
     t.integer  "score",      default: 0
     t.integer  "user_id"
     t.integer  "subject_id"
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_index "exams", ["subject_id"], name: "index_exams_on_subject_id"

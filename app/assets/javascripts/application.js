@@ -17,6 +17,7 @@
 //= require jquery.countdown
 //= require countdown
 //= require i18n/translations
+//= require social-share-button
 //= require_tree .
 
 function addForm() {
