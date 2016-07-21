@@ -1,0 +1,26 @@
+<% provide :title, t("page.do_exam", name: @exam.subject.name) %>
+<h3>
+  <%= t "exam.score "%>:
+  <%= t "exam.score_form", score: @exam.score,
+    total: @exam.subject.question_number %>
+</h3>
+<div>
+  <%= form_for @exam do |e| %>
+    <ol>
+      <%= e.fields_for :results do |r| %>
+        <li id="question_<%= r.object.question.id %>">
+          <%= r.object.question.question %> <%= r.object.state.to_s.humanize %>
+          <% r.object.question.answers.each do |a| %>
+            <div>
+              <%= r.check_box :multiple_answers,
+                {checked: r.object.multiple_answers.include?(a.id.to_s),
+                multiple: true, disabled: true}, a.id, false %>
+              <%= a.answer %><br/>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ol>
+  <% end %>
+  <%= link_to t("back"), exams_path, class: "btn btn-primary" %>
+</div>

@@ -1,0 +1,17 @@
+<% provide :title, t("page.exam") %>
+<div>
+  <table>
+    <tr>
+      <th><%= t "create.at" %></th>
+      <th><%= t "page.subject" %></th>
+      <th><%= t "subject.duration" %></th>
+      <th><%= t "subject.question_number" %></th>
+      <th><%= t "exam.spent_time" %></th>
+      <th><%= t "exam.score" %></th>
+      <th><%= t "exam.status" %></th>
+    </tr>
+    <%= render @exams %>
+  </table>
+  <div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>

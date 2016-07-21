@@ -1,3 +1,2 @@
-<% if @exam.init? || @exam.testing? %>
-  <%= render "do_exam" %>
-<% end %>
+<%= render "do_exam" if @exam.init? || @exam.testing? %>
+<%= render "show_exam" if @exam.checked? %>
