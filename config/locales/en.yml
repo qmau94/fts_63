@@ -68,6 +68,7 @@ en:
   mail:
     finish: You have finished Framgia training test
     start: You have started Framgia training test
+    average: Report your average score of month
   new: News
   page:
     do_exam: "%{name} exam"

@@ -10,6 +10,8 @@ class UserWorker
       send_email_when_start_exam user_id, exam_id
     when FINISH_EXAM
       send_email_when_finish_exam user_id, exam_id
+    when AVERAGE_SCORE
+      send_email_average_score user_id, exam_id
     end
   end
 
