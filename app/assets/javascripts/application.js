@@ -50,7 +50,7 @@ $(document).on('focus', '.question-type', function() {
   /* jquery create question */
 $(document).on('change load', '.td-q-e-1 .question-type', function() {
   if($(this).val() == 'single_choice') {
-    $('input[type='checkbox']').prop('checked', false);
+    $('input[type="checkbox"]').prop('checked', false);
     checkbox();
     changeType();
     $('.add_answer').show();
@@ -62,7 +62,7 @@ $(document).on('change load', '.td-q-e-1 .question-type', function() {
       changeType();
     }
   } else if ($(this).val() == 'multiple_choice') {
-    $('input[type='checkbox']').prop('checked', false);
+    $('input[type="checkbox"]').prop('checked', false);
     changeType();
     $('.add_answer').show();
     if(prev == 'text'){
@@ -87,17 +87,17 @@ $(document).on('change load', '.td-q-e-1 .question-type', function() {
   /* jquery update question */
 $(document).on('change load', '.td-q-e-2 .question-type', function() {
   if($(this).val() == 'single_choice') {
-    $('input[type='checkbox']').prop('checked', false);
+    $('input[type="checkbox"]').prop('checked', false);
     $('.add_answer').show();
     var allCheckboxs = $('.correct');
     allCheckboxs.each(function(index, cb) {
       $(cb).attr('checked', false);
-    })
+    });
     if(prev == 'text'){
       changeType();
     }
   } else if ($(this).val() == 'multiple_choice') {
-    $('input[type='checkbox']').prop('checked', false);
+    $('input[type="checkbox"]').prop('checked', false);
     $('.add_answer').show();
     if(prev == 'text'){
       changeType();
@@ -123,8 +123,8 @@ function remove_fields(link) {
 function checkbox() {
   var type = $('.question-type').val();
   if(type == 'single_choice'){
-    $('input[type='checkbox']').on('click', function() {
-      $('input[type='checkbox']').not(this).prop('checked', false);
+    $('input[type="checkbox"]').on('click', function() {
+      $('input[type="checkbox"]').not(this).prop('checked', false);
     })
   }
 };
@@ -227,8 +227,8 @@ $(document).on('page:change', scroll_top);
 var check_single = function() {
   var type = $('.question-type').val();
   if(type == 'single_choice'){
-    $('input[type='checkbox']').on('click', function() {
-      $('input[type='checkbox']').not(this).prop('checked', false);
+    $('input[type="checkbox"]').on('click', function() {
+      $('input[type="checkbox"]').not(this).prop('checked', false);
     })
   }
   else if(type == 'text'){
