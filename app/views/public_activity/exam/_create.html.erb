@@ -1,0 +1,5 @@
+<li class="list-group-item">
+  <%= link_to t("exam.id", id: a.trackable.id),
+    edit_admin_exam_path(a.trackable) %>
+  <%= t "exam.has_created" %><%= a.trackable.created_at %>
+</li>
