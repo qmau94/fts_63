@@ -1,11 +1,13 @@
 <fieldset class="field">
-  <%= f.label :answer %>
-  <%= f.text_field :answer, class: "form-control" %>
-  <div class="correct-choose">
-    <%= f.label :is_correct %>
-    <%= f.check_box :is_correct, class: "check" %>
+  <div class="col-md-6 col-sm-6 row">
+    <%= f.label :answer %>
   </div>
-  <div class="remove-choose">
+  <div class="correct-choose col-md-3 col-sm-3 row">
+    <%= f.check_box :is_correct, class: "check" %>
+    <%= f.label :is_correct %>
+  </div>
+  <div class="remove-choose col-md-3 col-sm-3">
     <%= link_to_remove_fields t("question.remove"), f %>
   </div>
+  <%= f.text_field :answer, class: "form-control" %>
 </fieldset>
