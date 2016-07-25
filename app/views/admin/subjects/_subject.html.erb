@@ -3,7 +3,7 @@
   <td><%= subject.question_number %></td>
   <td><%= subject.duration %></td>
   <td><%= link_to t("edit.button"), edit_admin_subject_path(subject),
-    class: "btn btn-primary" %></td>
+    class: "btn btn-primary hvr-pulse-shrink" %></td>
   <td><%= link_to t("delete.button"), [:admin, subject], method: :delete,
-      class: "btn btn-primary", data: {confirm: t("delete.confirm")} %></td>
+    class: "btn btn-danger hvr-pulse-shrink", data: {confirm: t("delete.confirm")} %></td>
 </tr>

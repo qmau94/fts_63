@@ -1,19 +1,23 @@
 <div class="td-question">
-  <%= link_to t("question.new"), new_admin_question_path,
-    class: "btn btn-primary" %>
   <%= search_form_for @search, url: admin_questions_path do |f| %>
+    <%= link_to t("question.new"), new_admin_question_path,
+      class: "btn btn-primary hvr-pulse-shrink td-new-q" %>
+    <%= f.submit t("question.search"), class:"hvr-pulse-shrink btn btn-success margin" %>
     <%= f.condition_fields do |c| %>
       <%= render "condition_fields", f: c %>
     <% end %>
-    <p><%= link_to_add_fields "Add Conditions", f, :condition %></p>
-    <%= f.submit t "question.search" %>
+    <%= link_to_add_fields t(:add_condition), f, :condition %>
+    <div class="clearfix"></div>
   <% end %>
-  <table>
+  <table class="col-md-8 table table-striped table-hover">
     <tr>
       <th><%= sort_link @search, :username, t("question.title") %></th>
       <th><%= sort_link @search, :email, t("question.subject") %></th>
+      <th></th>
+      <th></th>
     </tr>
     <%= render @questions %>
   </table>
+  <div class="clearfix"></div>
   <%= paginate @questions %>
 </div>
