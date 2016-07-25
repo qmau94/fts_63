@@ -1,0 +1,39 @@
+<% unless controller_name == "sessions" %>
+  <p><%= t :td_login %></p>
+  <%= link_to t("home.log_in"),
+    new_session_path(resource_name),
+    class:"btn btn-primary hvr-pulse-shrink" %><br />
+<% end %>
+
+<% if devise_mapping.registerable? && controller_name != "registrations" %>
+  <p><%= t :td_signup %></p>
+  <%= link_to t("home.sign_up"), new_registration_path(resource_name),
+    class:"btn btn-primary hvr-pulse-shrink" %><br />
+<% end %>
+
+<% if devise_mapping.recoverable? &&
+  controller_name != "passwords" && controller_name != "registrations" %>
+  <%= link_to t("home.forgot"), new_password_path(resource_name) %>
+  <br />
+<% end %>
+
+<% if devise_mapping.confirmable? && controller_name != "confirmations" %>
+  <%= link_to t("home.not_recevive"),
+    new_confirmation_path(resource_name) %><br />
+<% end %>
+
+<% if devise_mapping.lockable? &&
+  resource_class.unlock_strategy_enabled?(:email) &&
+  controller_name != "unlocks" %>
+  <%= link_to t("home.not_unlock"),
+    new_unlock_path(resource_name) %><br />
+<% end %>
+
+<% if devise_mapping.omniauthable? %>
+  <% resource_class.omniauth_providers.each do |provider| %>
+    <p><%= t :or %></p>
+    <%= link_to t("home.omniauth"),
+      omniauth_authorize_path(resource_name, provider),
+      class:"btn btn-primary hvr-pulse-shrink" %><br />
+  <% end %>
+<% end %>
