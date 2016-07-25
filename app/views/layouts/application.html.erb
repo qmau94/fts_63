@@ -10,11 +10,14 @@
   </head>
   <body>
     <%= render "layouts/header" %>
-    <div class="page-content">
-      <div class="container">
+    <div class="content slide">
+      <div class="container-fluid td-container row">
         <%= render "layouts/flash" %>
         <%= yield %>
       </div>
+    </div>
+    <div class="circle">
+      <%= image_tag "up-arrow.png", class: "image-background" %>
     </div>
     <%= render "layouts/footer" %>
   </body>

@@ -1,9 +1,21 @@
-<span>
-  <%= subject.name %>
-  <%= form_for exam do |e| %>
-    <%= e.hidden_field :status, value: "init" %>
-    <%= e.hidden_field :user_id, value: current_user.id %>
-    <%= e.hidden_field :subject_id, value: subject.id %>
-    <%= e.submit t("create.exam"), class: "btn btn-primary" %>
-  <% end %>
-</span>
+<div class="col-sm-6 col-md-3 td-exam-hover">
+  <div class="layout">
+    <%= image_tag("http://i.imgur.com/LHHjr9r.png",
+      class: "image-background img-responsive") %>
+    <div class="op-hover img1">
+      <%= image_tag("http://i.imgur.com/EF7v1Ce.png",
+        class: "image-background img-responsive img-hover") %>
+    </div>
+  </div>
+  <div class="td-create-exam text-center">
+    <p><%= subject.name %></p>
+    <div class="td-none">
+      <%= form_for exam do |e| %>
+        <%= e.hidden_field :status, value: "init" %>
+        <%= e.hidden_field :user_id, value: current_user.id %>
+        <%= e.hidden_field :subject_id, value: subject.id %>
+        <%= e.submit t("create.exam"), class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

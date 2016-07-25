@@ -1,5 +1,5 @@
-<li id="question_<%= r.object.question.id %>">
-  <%= r.object.question.question %>
+<li id="question_<%= r.object.question.id %>" class="td-answer">
+  <p><%= r.object.question.question %></p>
   <% r.object.question.answers.each do |a| %>
     <div>
       <%= r.check_box :multiple_answers,
@@ -8,4 +8,5 @@
       <%= a.answer %><br/>
     </div>
   <% end %>
+  <div class="clearfix"></div>
 </li>
