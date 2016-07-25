@@ -17,6 +17,7 @@ class Admin::ExamsController < ApplicationController
     else
       flash[:danger] = t "exam.update.error"
     end
+    @exam.create_activity key: "exam.update", recipient: @exam.user
     redirect_to admin_exams_path
   end
 

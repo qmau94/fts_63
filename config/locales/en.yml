@@ -29,6 +29,9 @@ en:
       error: Create Exam Error
       success: Create Exam Success
     finished: Exam has finished
+    has_checked: has checked at 
+    has_created: has created at 
+    id: Exam %{id}
     init: Start
     result: "Score of this exam: %{score}"
     score: Score
@@ -66,13 +69,14 @@ en:
     alert: Your exam has timed out. Your test will be submitted automatically
   log_in: Log in
   mail:
+    average: Report your average score of month
     finish: You have finished Framgia training test
     start: You have started Framgia training test
-    average: Report your average score of month
   new: News
   page:
     do_exam: "%{name} exam"
     exam: Exam
+    noti: Notifications
     question: Questions
     subject: Subjects
   question:

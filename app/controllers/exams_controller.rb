@@ -27,6 +27,7 @@ class ExamsController < ApplicationController
     else
       flash[:danger] = t "finish.error"
     end
+    @exam.create_activity key: "exam.create", owner: current_user
     redirect_to exams_path
   end
 

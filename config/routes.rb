@@ -12,7 +12,9 @@ Rails.application.routes.draw do
     resources :questions, except: [:show]
     resources :exams, only: [:index, :edit, :update]
     mount Sidekiq::Web, at: "/sidekiq"
+    resources :notifications, only: :index
   end
   resources :exams, except: :destroy
   resources :subjects, only: :index
+  resources :notifications, only: :index
 end
