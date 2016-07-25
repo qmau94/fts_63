@@ -1,8 +1,13 @@
 en:
   about: About
+  add_condition: Add Conditions
   admin: Admin page
   answers: Answers
   back: Back
+  blog:
+    date: 22 Tháng 9 2016
+    test: Lorem ipsum dolor sit amet, consectetur
+    title: Subject New
   cancel_acc: Cancel my account
   check: Check
   confirm: Are you sure?
@@ -33,15 +38,21 @@ en:
     has_created: has created at 
     id: Exam %{id}
     init: Start
-    result: "Score of this exam: %{score}"
+    result: 'Score of this exam: %{score}'
     score: Score
-    score_form: "%{score}/%{total}"
+    score_form: '%{score}/%{total}'
     spent_time: Spent Time
     status: Status
     testing: Continue
     update:
       error: Update exam error
       success: Update exam success
+  feature4:
+    more: More
+    national: National
+    partner: Partner
+    personnel: Personnel
+    test: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
   finish:
     button: Finish
     error: Finish Exam Error
@@ -53,13 +64,28 @@ en:
     is_not_admin: You don't have permission to do this action
     recordnotfound: Sorry, no record of %{column_name} was found
     subject_nil: Subject nil!!
+  footer:
+    address: 9F HTP Building, 434 Tran Khat Chan, 1km from Bach Khoa University, Ha Noi
+    alright: © 2014 Name. All rights reserved.
+    by: Terms & Conditions. Design by Laboratory
+    facebook: Facebook
+    follow: 'Follow Us:'
+    headquarters: 'Headquarters :'
+    hotline: HOT LINE
+    number: 0123 .456 .7891 Mrs Huyền
+    youtube: Youtube
   hello: Hello
   home:
     edit: Edit profile
+    forgot: Forgot your password?
     h1: Welcome to Training Framgia App
     leave_blank: (leave blank if you don't want to change it)
+    log_in: Log in
     log_in_with_fb: Log in with Facebook
     min_chars: characters minimum
+    not_recevive: Didn't receive confirmation instructions?
+    not_unlock: Didn't receive unlock instructions?
+    omniauth: Sign in with Facebook
     pass_require: (we need your current password to confirm your changes)
     sign_up: Sign up
     title: Home
@@ -73,8 +99,15 @@ en:
     finish: You have finished Framgia training test
     start: You have started Framgia training test
   new: News
+  note:
+    list_1: Note 1
+    list_2: Note 1
+    list_3: Note 3
+    list_4: Note 4
+    title: Note
+  or: Or
   page:
-    do_exam: "%{name} exam"
+    do_exam: '%{name} exam'
     exam: Exam
     noti: Notifications
     question: Questions
@@ -109,10 +142,13 @@ en:
     duration: Duration
     name: Name
     question_number: Number Question
+    title: Choose your subject you want to do exam
     update:
       error: Update Subject Error
       success: Update Subject Success
   submit: Submit
+  td_signup: Don't have an account?
+  td_login: You have an account?
   title: Project2
   unhappy: Unhappy?
   update: Update

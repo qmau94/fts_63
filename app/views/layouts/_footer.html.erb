@@ -1,12 +1,44 @@
-<footer class="footer">
-  <small>
-    <a href="http://www.railstutorial.org/"><%= t :rails %></a>
-  </small>
-  <nav>
-    <ul>
-      <li><%= link_to t(:about), "#" %></li>
-      <li><%= link_to t(:contact), "#" %></li>
-      <li><a href="http://news.railstutorial.org/"><%= t :new %></a></li>
-    </ul>
-  </nav>
+<footer class="footer-section">
+  <div class="col-md-3 col-xs-12 td_footer">
+    <div class="row td_footer_1">
+      <div class="td_mastercus">
+        <p><%= t "footer.alright" %></p>
+        <p><%= t "footer.by" %></p>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-xs-12 td_footer">
+    <div class="row td_footer_2">
+      <p class="td_p"><%= t :contact %></p>
+      <p class="td_text td_text_1"><%= t "footer.headquarters" %></p>
+      <p class="td_text"><%= t "footer.address" %></p>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-xs-12 td_footer">
+    <div class="row td_footer_3">
+      <p class="td_p"><%= t "footer.hotline" %></p>
+      <p class="td_text td_text_1"><%= t "footer.number" %></p>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-xs-12 td_footer">
+    <div class="row td_footer_4">
+      <p class="td_p"><%= t "footer.follow" %></p>
+      <p class="td_text td_text_1">
+        <input type="text">
+        <%= button_tag t "feature4.more" %>
+      </p>
+      <p class="td_text td_text_2">
+        <span><%= t "footer.facebook" %></span>
+        <span>-</span>
+        <span><%= t "footer.youtube" %></span>
+        <span>-</span>
+        <span><%= t "footer.google" %></span>
+      </p>
+    </div>
+  </div>
+  <div class="clearfix"></div>
 </footer>

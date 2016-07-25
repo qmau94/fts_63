@@ -1,5 +1,100 @@
 <% provide :title, t("home.title") %>
-<div class="center jumbotron">
+<div class="signin">
   <h1><%= t "home.h1" %></h1>
-  <%= link_to t(:signup), new_user_registration_path, class: "btn btn-lg btn-primary" %>
+</div>
+<div id="feature3">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        <%= image_tag("http://i.imgur.com/cb7wIQq.jpg",
+          class: "image-background img-responsive") %>
+      </div>
+
+      <div class="col-md-3">
+        <h3 class="feature3-h3"><%= t "note.title" %></h3>
+        <ul>
+          <li><%= t "note.list_1" %></li>
+          <li><%= t "note.list_2" %></li>
+          <li><%= t "note.list_3" %></li>
+          <li><%= t "note.list_4" %></li>
+        </ul>
+      </div>
+
+      <div class="col-md-6">
+        <div class="title">
+          <h3 class="feature3-h3"><%= t "blog.title" %></h3>
+        </div>
+        <div class="col-md-6 container-blog">
+          <div class="row img-blog" id="img-blog">
+            <%= image_tag("http://i.imgur.com/LHHjr9r.png",
+              class: "image-background img-responsive") %>
+            <p class="p-title after-img">
+              <%= t "blog.test" %>
+            </p>
+            <small class="date"><%= t "blog.date" %></small>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="col-md-12 demo2">
+            <div class="row">
+              <p class="p-title">
+                <%= t "blog.test" %>
+              </p>
+              <small class="date"><%= t "blog.date" %></small>
+            </div>
+          </div>
+          <div class="col-md-12 demo2">
+            <div class="row">
+              <p class="p-title">
+                <%= t "blog.test" %>
+              </p>
+              <small class="date"><%= t "blog.date" %></small>
+            </div>
+          </div>
+          <div class="col-md-12 demo2-end">
+            <div class="row">
+              <p class="p-title">
+                <%= t "blog.test" %>
+              </p>
+              <small class="date"><%= t "blog.date" %></small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="feature4">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 hover">
+        <h1 class="counter">5</h1>
+        <h1>+</h1>
+        <h3><%= t "feature4.national" %></h3>
+        <div class="s"></div>
+        <p><%= t "feature4.test" %></p>
+        <br>
+        <%= button_tag t("feature4.more"), class: "btn2" %>
+      </div>
+      <div class="col-md-4 hover">
+        <h1 class="counter">657</h1>
+        <h1>+</h1>
+        <h3><%= t "feature4.personnel" %></h3>
+        <div class="s"></div>
+        <p><%= t "feature4.test" %></p>
+        <br>
+        <%= button_tag t("feature4.more"), class: "btn2" %>
+      </div>
+      <div class="col-md-4 hover">
+        <h1 class="counter">115</h1>
+        <h1>+</h1>
+        <h3><%= t "feature4.partner" %></h3>
+        <div class="s"></div>
+        <p><%= t "feature4.test" %></p>
+        <br>
+        <%= button_tag t("feature4.more"), class: "btn2" %>
+      </div>
+    </div>
+  </div>
 </div>

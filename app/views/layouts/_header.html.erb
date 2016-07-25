@@ -1,45 +1,49 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to t(:title), root_url, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <% if user_signed_in? %>
-          <li>
-            <%= link_to t("home.title"), root_url %>
-          </li>
-          <li>
-            <%= link_to t("page.noti"), notifications_path %>
-          </li>
-          <li>
-            <%= link_to t("create.exam"), subjects_path %>
-          </li>
-          <li>
-            <%= link_to t("page.exam"), exams_path %>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-              aria-haspopup="true" aria-expanded="false">
-              <%= t :signed_in %> <%= current_user.username %> <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li>
-                <%= link_to t("home.edit"), edit_user_registration_path %>
-              </li>
-              <li>
-                <%= link_to t(:log_out), destroy_user_session_path, method: :delete %>
-              </li>
-            </ul>
-          </li>
-        <% else %>
-          <li>
-            <%= link_to t(:log_in), new_user_session_path %>
-          </li>
-          <li>
-            <%= link_to t("home.log_in_with_fb"),
-              user_facebook_omniauth_authorize_path %>
-          </li>
-        <% end %>
-      </ul>
-    </nav>
-  </div>
-</header>
+<div class="container-fluid td-head">
+  <header class="slide header">
+    <ul id="navToggle" class="burger slide">
+      <li></li><li></li><li></li>
+    </ul>
+    <%= link_to "", root_url, id: "logo" %>
+    <div id="logo-before"></div>
+  </header>
+  <nav class="slide">
+    <ul class="nav navbar-nav navbar-right td-nav">
+      <li class="active">
+        <%= link_to t("home.title"), root_url %>
+      </li>
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to t("page.noti"), notifications_path %>
+        </li>
+        <li>
+          <%= link_to t("create.exam"), subjects_path %>
+        </li>
+        <li>
+          <%= link_to t("page.exam"), exams_path %>
+        </li>
+        <li class="treeview">
+          <a class="td-sign">
+            <%= t :signed_in %> <%= current_user.username %>
+            <span class="caret"></span>
+          </a>
+          <ul class="treeview-menu">
+            <li>
+              <%= link_to t("home.edit"), edit_user_registration_path %>
+            </li>
+            <li>
+              <%= link_to t(:log_out), destroy_user_session_path, method: :delete %>
+            </li>
+          </ul>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to t(:log_in), new_user_session_path %>
+        </li>
+        <li>
+          <%= link_to t("home.log_in_with_fb"),
+            user_facebook_omniauth_authorize_path %>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+</div>
