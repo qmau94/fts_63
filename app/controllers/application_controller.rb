@@ -10,8 +10,8 @@ class ApplicationController < ActionController::Base
 
   protected
   rescue_from CanCan::AccessDenied do |exception|
-    flash[:danger] = t "flash.is_not_admin"    
-    redirect_to root_url    
+    flash[:danger] = t "flash.is_not_admin"
+    redirect_to root_url   
   end
   
   def configure_permitted_parameters
@@ -40,6 +40,12 @@ class ApplicationController < ActionController::Base
       "user"
     else
       "application"   
+    end
+  end
+
+  def authorize_admin!
+    if !current_user.is_admin? 
+      flash[:danger] = t "flash.is_not_admin"
     end
   end
 end

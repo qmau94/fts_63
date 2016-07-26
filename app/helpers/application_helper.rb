@@ -51,6 +51,10 @@ module ApplicationHelper
     Time.at(time).utc.strftime Settings.time_format
   end
 
+  def day_form time
+    Time.at(time).utc.strftime Settings.day_format
+  end
+
   def background answer, result
     content_tag :div, answer.answer, class: answer.is_correct? ?
       "list-group-item-success th-display" : "th-display"

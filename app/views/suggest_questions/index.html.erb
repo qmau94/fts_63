@@ -1,0 +1,12 @@
+<div class="td-do-exam col-md-10 col-sm-10 col-md-offset-1 col-sm-offset-1">
+  <%= link_to t("question.suggest"), new_suggest_question_path,
+    class: "btn btn-primary" %>
+  <table class="table table-hover table-striped">
+    <tr>
+      <th><%= t "question.title" %></th>
+      <th><%= t "question.subject" %></th>
+      <th><%= t "question.approve" %></th>
+    </tr>
+    <%= render @suggest_questions %>
+  </table>
+</div>

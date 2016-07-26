@@ -1,18 +1,27 @@
 <% provide :title, t("page.exam") %>
+<h2><%= t "page.exam" %></h2>
+<%= search_form_for @search, url: admin_exams_path do |f| %>
+  <%= f.submit t("users.search"),
+    class:"hvr-pulse-shrink btn btn-success margin-1" %>
+  <%= f.condition_fields do |c| %>
+    <%= render "condition_fields", f: c %>
+  <% end %>
+  <%= link_to_add_fields t(:add_condition), f, :condition %>
+<% end %>
 <div>
   <table class="table table-hover table-striped">
     <tr>
-      <th><%= t "create.at" %></th>
-      <th><%= t "page.subject" %></th>
-      <th><%= t "subject.duration" %></th>
-      <th><%= t "subject.question_number" %></th>
-      <th><%= t "exam.spent_time" %></th>
-      <th><%= t "exam.score" %></th>
-      <th><%= t "exam.status" %></th>
-      <th></th>
+      <th><%= sort_link @search, :created_at, t("create.at") %></th>
+      <th><%= sort_link @search, :subject_id, t("page.subject") %></th>
+      <th><%= sort_link @search, :duration, t("subject.duration") %></th>
+      <th><%= sort_link @search, :question_number, t("subject.question_number") %></th>
+      <th><%= sort_link @search, :spent_time, t("exam.spent_time") %></th>
+      <th><%= sort_link @search, :score, t("exam.score") %></th>
+      <th><%= sort_link @search, :status, t("exam.status") %></th>
     </tr>
     <%= render @exams %>
   </table>
+  <%= paginate @exams %>
   <div class="clearfix"></div>
 </div>
 <div class="clearfix"></div>

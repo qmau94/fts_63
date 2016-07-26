@@ -18,6 +18,13 @@
     <li class="hvr-bounce-to-left">
       <%= link_to t("page.questions"), admin_questions_path %>
     </li>
+    <li>
+      <%= link_to t("home.suggest_question"), admin_suggest_questions_path %>
+    </li>
+    <li>
+      <%= link_to t("users.users"), admin_users_path %>
+    </li>
+    <li>
     <li class="hvr-bounce-to-left">
       <%= link_to t(:log_out), destroy_user_session_path, method: :delete %>
     </li>

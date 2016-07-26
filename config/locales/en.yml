@@ -1,4 +1,5 @@
 en:
+  :add_condition: 'Add Conditions'
   about: About
   add_condition: Add Conditions
   admin: Admin page
@@ -34,8 +35,8 @@ en:
       error: Create Exam Error
       success: Create Exam Success
     finished: Exam has finished
-    has_checked: has checked at 
-    has_created: has created at 
+    has_checked: has checked at
+    has_created: has created at
     id: Exam %{id}
     init: Start
     result: 'Score of this exam: %{score}'
@@ -90,6 +91,7 @@ en:
     sign_up: Sign up
     title: Home
     users_index: All users
+    suggest_question: Suggest Question
   in: created at
   js:
     alert: Your exam has timed out. Your test will be submitted automatically
@@ -112,8 +114,10 @@ en:
     noti: Notifications
     question: Questions
     subject: Subjects
+    suggestion: Suggestion
   question:
     add_answer: Add other answer
+    approve: Approve
     content: Content
     create: Add question
     create_fail: Question create failed!!!
@@ -125,6 +129,7 @@ en:
     remove: Remove
     search: Search
     subject: Subject
+    suggest: Suggest Question
     title: Question
     update_success: Update successfull
   rails: Rails tutorial
@@ -166,3 +171,9 @@ en:
     sort: Sort
     updated: User updated!
     users: Users
+  suggest_questions:
+    created: Your suggest question has been created successfully!
+    active: Approve
+    reject: Reject
+    updated: Suggest question has been updated
+    failed: Suggest question can not be updated

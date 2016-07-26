@@ -4,7 +4,9 @@ class Admin::ExamsController < ApplicationController
   before_action :update_state_result, only: :edit
 
   def index
-    @exams = Exam.all.includes :subject
+    @search = Exam.search params[:q]
+    @exams = @search.result.includes(:subject).page(params[:page]).per Settings.per_page
+    @search.build_condition
   end
 
   def edit

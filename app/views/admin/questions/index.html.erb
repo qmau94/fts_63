@@ -1,3 +1,5 @@
+<% provide :title, t("page.question") %>
+<h2><%= t "page.question" %></h2>
 <div class="td-question">
   <%= search_form_for @search, url: admin_questions_path do |f| %>
     <%= link_to t("question.new"), new_admin_question_path,

@@ -21,6 +21,9 @@
         <li>
           <%= link_to t("page.exam"), exams_path %>
         </li>
+        <li>
+            <%= link_to t("home.suggest_question"), new_suggest_question_path %>
+        </li>
         <li class="treeview">
           <a class="td-sign">
             <%= t :signed_in %> <%= current_user.username %>

@@ -1,0 +1,9 @@
+<tr>
+  <td><%= suggest_question.question %></td>
+  <td><%= suggest_question.subject.name %></td>
+  <td><%= suggest_question.approve %></td>
+  <% if suggest_question.wait? %>
+  <td><%= link_to t("question.approve"), admin_suggest_question_approve_questions_path(suggest_question, approve: Settings.approve ), method: :patch %></td>
+  <td><%= link_to t("suggest_questions.reject"), admin_suggest_question_approve_questions_path(suggest_question, approve: Settings.reject), method: :patch %></td>
+  <% end %>
+</tr>

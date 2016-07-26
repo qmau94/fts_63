@@ -1,0 +1,11 @@
+<fieldset class="field">
+  <%= f.label :answer %>
+  <%= f.text_field :answer, class: "form-control" %>
+  <div class="correct-choose">
+    <%= f.label :is_correct %>
+    <%= f.check_box :is_correct, class: "check" %>
+  </div>
+  <div class="remove-choose">
+    <%= link_to_remove_fields t("question.remove"), f %>
+  </div>
+</fieldset>

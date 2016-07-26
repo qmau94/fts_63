@@ -6,6 +6,7 @@ class Ability
     if namespace == "admin"
       if user.is_admin?
         can :read, :all
+        can :manage, SuggestQuestion
         can :manage, Subject
         can :manage, Question
         can [:edit, :update], [Exam, Result]
@@ -20,7 +21,9 @@ class Ability
         cannot :manage, :all
       else
         can :read, Subject
+        can [:create, :edit, :update], SuggestQuestion
         can [:read, :create, :update], Exam
+        can [:read, :create, :new], SuggestQuestion
       end
     end
   end

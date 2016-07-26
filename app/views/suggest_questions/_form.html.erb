@@ -1,0 +1,35 @@
+<div class="td-question">
+  <%= render "shared/error_message", object: @suggest_question %>
+  <%= form_for @suggest_question do |f| %>
+    <%= f.label :subject_id, t("question.subject") %>
+    <%= f.collection_select :subject_id, @subjects, :id, :name,
+      {include_blank: false}, class: "form-control" %>
+    <%= f.label :question, t("question.content") %>
+    <%= f.text_field :question, class: "form-control" %>
+
+    <div class="col-md-6">
+      <%= f.label :question_type, t("question.question_type") %>
+      <%= f.select :question_type, @question_types.collect {|k,v| [k.humanize,k]},
+        {include_blank: false}, class: "form-control question-type" %>
+    </div>
+    <div class="clearfix"></div>
+    <h3><%= t :answers %></h3>
+    <div id="answers">
+      <div class="table">
+        <div>
+          <%= f.fields_for :_suggest_answers do |suggest_answer_form| %>
+            <%= render "suggest_answer_fields", f: suggest_answer_form  %>
+          <% end %>
+          <div class="add_answer">
+            <%= link_to_add_field t("question.add_answer"), f, :suggest_answers %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.submit t("question.#{params[:action]}"),
+      class: "btn btn-primary col-md-4 col-md-offset-4" %>
+    <%= add_fields_answer f, :suggest_answers %>
+  <% end %>
+</div>
