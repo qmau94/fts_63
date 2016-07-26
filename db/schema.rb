@@ -88,12 +88,12 @@ ActiveRecord::Schema.define(version: 20160724135436) do
 
   create_table "results", force: :cascade do |t|
     t.boolean  "state",            default: false
-    t.string   "multiple_answers", default: "--- []\n"
+    t.string   "multiple_answers"
     t.integer  "exam_id"
     t.integer  "question_id"
     t.integer  "other_answer_id"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   add_index "results", ["exam_id"], name: "index_results_on_exam_id"
