@@ -15,7 +15,7 @@ class Exam < ActiveRecord::Base
         unless results.any?
           subject.questions.random.limit(
             subject.question_number).each do |question|
-              question.results.create! exam: self
+              question.results.create! exam: self,multiple_answers: []
           end
           update_time_status
         end

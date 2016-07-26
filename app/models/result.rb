@@ -10,7 +10,7 @@ class Result < ActiveRecord::Base
     if multiple_answers.count == count_correct_answer
       state = true
       multiple_answers.collect.each do |id|
-        unless question.answers.find_by(id).is_correct
+        unless question.answers.find_by(id: id).is_correct
           update_attributes state: false
           return
         end
